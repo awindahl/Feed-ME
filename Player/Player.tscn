@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Player/Player.png" type="Texture" id=2]
+[ext_resource path="res://Player/eat.wav" type="AudioStream" id=3]
+
+[node name="Player" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index", "collision" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0, 8 )
+texture = ExtResource( 2 )
+hframes = 4
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -43.9863, -6.83936, -39.9654, -28.6924, -36.1192, -32.5385, -30.5249, -39.5315, -25.6298, -46.8741, -6.57394, -51.7692, 6.36305, -51.944, 24.0203, -47.5734, 29.7895, -39.007, 36.0832, -31.4896, 41.3279, -15.5806, 40.8034, 2.9508, 34.6846, 18.5102, 25.4189, 34.2443, 15.4539, 50.1533, 0.419037, 53.6498, -11.8187, 50.8526, -20.9095, 43.3352, -28.7766, 28.65, -35.4199, 16.7619, -42.5877, 1.02773 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
+
+[node name="hitbox" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="hitbox" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -27.9441, -46.5066, -42.7541, -27.6184, -47.2615, -6.58388, -38.4613, 14.8799, -25.1538, 42.3536, -12.0608, 55.0173, 1.24672, 55.8758, 17.5592, 53.0855, 35.8035, 19.602, 43.7451, 0.713821, 42.028, -23.7549, 27.8618, -48.4383, 5.53947, -54.8775, -16.139, -51.8725 )
+
+[node name="eat" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+

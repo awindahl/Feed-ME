@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Rock1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Rock4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Rock2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Rock5.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Rock3.tscn" type="PackedScene" id=7]
+
+[node name="Level 1" type="Node2D"]
+
+position = Vector2( 0.193767, 0.149051 )
+
+[node name="Enemy" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 375.792, 452.62 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Enemy2" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 606.277, 522.768 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Enemy3" parent="." index="2" instance=ExtResource( 1 )]
+
+position = Vector2( 1038.86, 425.897 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Enemy4" parent="." index="3" instance=ExtResource( 1 )]
+
+position = Vector2( 634.671, 195.412 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Enemy5" parent="." index="4" instance=ExtResource( 1 )]
+
+position = Vector2( 850.893, 862.272 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="Enemy7" parent="." index="5" instance=ExtResource( 1 )]
+
+position = Vector2( 479.988, 1146.63 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="Enemy8" parent="." index="6" instance=ExtResource( 1 )]
+
+position = Vector2( 1435.07, 1100.27 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="Enemy9" parent="." index="7" instance=ExtResource( 1 )]
+
+position = Vector2( 1478.34, 169.916 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="Enemy6" parent="." index="8" instance=ExtResource( 1 )]
+
+position = Vector2( 733.211, 302.304 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Player" parent="." index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 640.01, 359.037 )
+
+[node name="Rock1" parent="." index="10" instance=ExtResource( 3 )]
+
+position = Vector2( 304.835, 227.937 )
+
+[node name="Rock4" parent="." index="11" instance=ExtResource( 4 )]
+
+position = Vector2( 466.434, 790.093 )
+
+[node name="Rock7" parent="." index="12" instance=ExtResource( 4 )]
+
+position = Vector2( 503.525, -41.3522 )
+
+[node name="Rock8" parent="." index="13" instance=ExtResource( 4 )]
+
+position = Vector2( 138.801, 885.91 )
+
+[node name="Rock2" parent="." index="14" instance=ExtResource( 5 )]
+
+position = Vector2( 979.339, 39.2449 )
+
+[node name="Rock9" parent="." index="15" instance=ExtResource( 5 )]
+
+position = Vector2( 1272.97, 879.963 )
+
+[node name="Rock5" parent="." index="16" instance=ExtResource( 6 )]
+
+position = Vector2( 1192.91, 557.279 )
+
+[node name="Rock6" parent="." index="17" instance=ExtResource( 6 )]
+
+position = Vector2( 1013.64, 1252.73 )
+
+[node name="Rock3" parent="." index="18" instance=ExtResource( 7 )]
+
+position = Vector2( 133.432, 637.527 )
+
+
