@@ -10,6 +10,8 @@ var holdtime = 0
 var knockdir = Vector2(0,0)
 const TYPE = "PLAYER"
 var SPEED = 200
+var combo = 0
+var comboTimer = 100
 
 func _physics_process(delta):
 	# init
@@ -18,26 +20,42 @@ func _physics_process(delta):
 	var velocity = (mousePos - myPosition).normalized() * SPEED
 	scale = size
 	
+	# handles combos
+	if comboTimer <= 100 and comboTimer > 0:
+		comboTimer -= 1
+	if comboTimer == 0 and combo > 0:
+		combo = 0
+		
+	print (combo)
+	
 	# handles collision, checks if colliding body is larger than you - if it is you take damage, if not you 'eat' it
 	if hitstun > 0:
 		hitstun -= 1
 	
 	for area in $hitbox.get_overlapping_areas():
 		var body = area.get_parent()
-		if hitstun == 0 and size != null and body.size >= size and area.name  == "hitbox" and body.get("TYPE") == "ENEMY":
+		
+		if body.get("TYPE") == "ENEMY" and hitstun == 0 and body.size >= size and area.name  == "hitbox" :
 			hitstun = 10
 			knockdir = global_transform.origin - body.global_transform.origin
 			motion = knockdir.normalized()
-			#size -= body.size/3 -- dont shrink
 			health -= 1
-		elif body.size < size and area.name  == "hitbox" and body.get("TYPE") == "ENEMY":
-			size += body.size/4
-			$eat.play()
-			body.queue_free()
+
+		for area in $hitbox/mouth.get_overlapping_areas():
+			if body.size.x < size.x and area.name  == "hitbox":
+				if combo % 4 == 0 and combo != 0:
+					size += Vector2(0.5,0.5)
+				combo += 1
+				comboTimer = 100
+				$eat.play()
+				body.queue_free()
 		
 	# movement follows cursor unless enemy is larger, then knockback
 	if (mousePos-position).length() > 5 and hitstun == 0 and holdtime == 0:
-		move_and_slide(velocity * (scale.x/1.5))
+		if combo > 0:
+			move_and_slide(velocity*1.5 * (scale.x/1.5))
+		else:
+			move_and_slide(velocity * (scale.x/1.5))
 		rotation = velocity.angle() + deg2rad(270)
 	elif hitstun > 0:
 		move_and_slide(motion*600*scale.x)
@@ -55,13 +73,12 @@ func _physics_process(delta):
 		$Camera2D.set_zoom(size)
 	elif ($Camera2D.zoom.x/size.x) >= 1.5:
 		$Camera2D.set_zoom(size)
-		
 	
 	# sprite handing
-	for area in $hitbox.get_overlapping_areas():
+	for area in $hitbox/mouth.get_overlapping_areas():
 		var body = area.get_parent()
 		if area.name == "hitbox":
-			if body.size >= size:
+			if body.size >= size and body.get("TYPE") == "ENEMY": 
 				$Sprite.frame = 3
 				holdtime = 10
 			elif body.size < size:

@@ -4,7 +4,7 @@
 [ext_resource path="res://Player/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/eat.wav" type="AudioStream" id=3]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -54,6 +54,7 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
 
 [node name="hitbox" type="Area2D" parent="." index="3"]
 
+position = Vector2( 7.03408, 17.8154 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -61,14 +62,40 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="hitbox" index="0"]
 
+position = Vector2( -6.05204, -18.6661 )
+scale = Vector2( 1.03871, 1.06723 )
 build_mode = 0
 polygon = PoolVector2Array( -27.9441, -46.5066, -42.7541, -27.6184, -47.2615, -6.58388, -38.4613, 14.8799, -25.1538, 42.3536, -12.0608, 55.0173, 1.24672, 55.8758, 17.5592, 53.0855, 35.8035, 19.602, 43.7451, 0.713821, 42.028, -23.7549, 27.8618, -48.4383, 5.53947, -54.8775, -16.139, -51.8725 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="mouth" type="Area2D" parent="hitbox" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="hitbox/mouth" index="0"]
+
+position = Vector2( -5.95283, 25.45 )
+scale = Vector2( 0.709342, 0.390438 )
+build_mode = 0
+polygon = PoolVector2Array( -27.9441, -46.5066, -42.7541, -27.6184, -36.022, 2.25927, -28.9812, 21.7513, -21.9404, 38.1978, -12.0608, 55.0173, 1.24672, 55.8758, 17.5592, 53.0855, 29.0218, 21.1422, 34.051, 4.69576, 42.028, -23.7549, 27.8618, -48.4383, 5.53947, -54.8775, -16.139, -51.8725 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="eat" type="AudioStreamPlayer2D" parent="." index="4"]
 
+position = Vector2( -0.429276, 2.57566 )
 stream = ExtResource( 3 )
 volume_db = 0.0
 pitch_scale = 1.0

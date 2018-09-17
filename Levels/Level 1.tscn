@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Rock1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Rock4.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/Rock2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/Rock5.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Levels/Rock3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Rock2.tscn" type="PackedScene" id=4]
 
 [node name="Level 1" type="Node2D"]
 
@@ -44,57 +41,46 @@ scale = Vector2( 1.25, 1.25 )
 
 [node name="Enemy8" parent="." index="6" instance=ExtResource( 1 )]
 
-position = Vector2( 1435.07, 1100.27 )
+position = Vector2( 1130.26, 723.543 )
 scale = Vector2( 1.25, 1.25 )
 
-[node name="Enemy9" parent="." index="7" instance=ExtResource( 1 )]
+[node name="Enemy10" parent="." index="7" instance=ExtResource( 1 )]
+
+position = Vector2( -222.529, 442.71 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="Enemy11" parent="." index="8" instance=ExtResource( 1 )]
+
+position = Vector2( 1000.12, 45.4341 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="Enemy12" parent="." index="9" instance=ExtResource( 1 )]
+
+position = Vector2( 17.2061, 1141.37 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="Enemy9" parent="." index="10" instance=ExtResource( 1 )]
 
 position = Vector2( 1478.34, 169.916 )
 scale = Vector2( 1.25, 1.25 )
 
-[node name="Enemy6" parent="." index="8" instance=ExtResource( 1 )]
+[node name="Enemy6" parent="." index="11" instance=ExtResource( 1 )]
 
 position = Vector2( 733.211, 302.304 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Player" parent="." index="9" instance=ExtResource( 2 )]
+[node name="Player" parent="." index="12" instance=ExtResource( 2 )]
 
 position = Vector2( 640.01, 359.037 )
 
-[node name="Rock1" parent="." index="10" instance=ExtResource( 3 )]
+[node name="Rock1" parent="." index="13" instance=ExtResource( 3 )]
 
-position = Vector2( 304.835, 227.937 )
+position = Vector2( 283.337, 203.726 )
+size = Vector2( 3, 3 )
 
-[node name="Rock4" parent="." index="11" instance=ExtResource( 4 )]
+[node name="Rock2" parent="." index="14" instance=ExtResource( 4 )]
 
-position = Vector2( 466.434, 790.093 )
-
-[node name="Rock7" parent="." index="12" instance=ExtResource( 4 )]
-
-position = Vector2( 503.525, -41.3522 )
-
-[node name="Rock8" parent="." index="13" instance=ExtResource( 4 )]
-
-position = Vector2( 138.801, 885.91 )
-
-[node name="Rock2" parent="." index="14" instance=ExtResource( 5 )]
-
-position = Vector2( 979.339, 39.2449 )
-
-[node name="Rock9" parent="." index="15" instance=ExtResource( 5 )]
-
-position = Vector2( 1272.97, 879.963 )
-
-[node name="Rock5" parent="." index="16" instance=ExtResource( 6 )]
-
-position = Vector2( 1192.91, 557.279 )
-
-[node name="Rock6" parent="." index="17" instance=ExtResource( 6 )]
-
-position = Vector2( 1013.64, 1252.73 )
-
-[node name="Rock3" parent="." index="18" instance=ExtResource( 7 )]
-
-position = Vector2( 133.432, 637.527 )
+position = Vector2( 190.806, 729.303 )
+size = Vector2( 3, 3 )
 
 
