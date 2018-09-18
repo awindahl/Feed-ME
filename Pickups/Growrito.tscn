@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Pickups/Growrito.gd" type="Script" id=1]
+[ext_resource path="res://Pickups/growrito.png" type="Texture" id=2]
+
+[node name="Growrito" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="hitbox" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -25.7333, -16.0663, 19.3531, -23.2434, 4.815, 24.9715 )
+
+

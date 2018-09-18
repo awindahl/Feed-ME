@@ -1,22 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/enemy.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 30, 30 )
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="CircleShape2D" id=3]
-
-custom_solver_bias = 0.0
-radius = 100.0
+radius = 125.0
 
 [node name="Enemy" type="KinematicBody2D"]
 
@@ -28,18 +18,20 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 SPEED = 700
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
 
-modulate = Color( 0.640625, 0, 0, 1 )
+build_mode = 0
+polygon = PoolVector2Array( -1.52364, -54.2548, -20.5497, -49.2604, -43.3811, -27.1426, -45.5215, 9.24489, -22.4524, 52.7671, -1.04799, 58.2371, 25.3508, 49.4376, 42.9499, 10.6718, 41.7608, -29.5208, 23.2103, -48.0713 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Material", "Visibility" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-shape = SubResource( 1 )
+hframes = 3
+_sections_unfolded = [ "Animation", "Material", "Region", "Visibility" ]
 
 [node name="hitbox" type="Area2D" parent="." index="2"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -51,24 +43,30 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Z Index" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" index="0"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="hitbox" index="0"]
 
-shape = SubResource( 2 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+position = Vector2( 0, 1.99999 )
+scale = Vector2( 1.1, 1.1 )
+build_mode = 0
+polygon = PoolVector2Array( -1.52364, -54.2548, -20.5497, -49.2604, -43.3811, -27.1426, -45.5215, 9.24489, -22.4524, 52.7671, -1.04799, 58.2371, 25.3508, 49.4376, 42.9499, 10.6718, 41.7608, -29.5208, 23.2103, -48.0713 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="vision" type="Area2D" parent="." index="3"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 4
+collision_mask = 4
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index" ]
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vision" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 

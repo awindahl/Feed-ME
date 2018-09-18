@@ -4,14 +4,14 @@
 [ext_resource path="res://Player/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/eat.wav" type="AudioStream" id=3]
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index", "collision" ]
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -22,6 +22,7 @@ _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." index="1"]
 
+visible = false
 build_mode = 0
 polygon = PoolVector2Array( -43.9863, -6.83936, -39.9654, -28.6924, -36.1192, -32.5385, -30.5249, -39.5315, -25.6298, -46.8741, -6.57394, -51.7692, 6.36305, -51.944, 24.0203, -47.5734, 29.7895, -39.007, 36.0832, -31.4896, 41.3279, -15.5806, 40.8034, 2.9508, 34.6846, 18.5102, 25.4189, 34.2443, 15.4539, 50.1533, 0.419037, 53.6498, -11.8187, 50.8526, -20.9095, 43.3352, -28.7766, 28.65, -35.4199, 16.7619, -42.5877, 1.02773 )
 _sections_unfolded = [ "Transform" ]
@@ -54,12 +55,15 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
 
 [node name="hitbox" type="Area2D" parent="." index="3"]
 
+visible = false
 position = Vector2( 7.03408, 17.8154 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 5
+collision_mask = 5
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
@@ -74,6 +78,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="mouth" type="Area2D" parent="hitbox" index="1"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -87,6 +92,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="hitbox/mouth" index="0"]
 
+visible = false
 position = Vector2( -5.95283, 25.45 )
 scale = Vector2( 0.709342, 0.390438 )
 build_mode = 0
