@@ -6,7 +6,7 @@
 [node name="Growrito" type="Node2D"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index" ]
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

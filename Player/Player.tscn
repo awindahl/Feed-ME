@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/eat.wav" type="AudioStream" id=3]
+[ext_resource path="res://Player/hurt.wav" type="AudioStream" id=4]
+[ext_resource path="res://Quirky-Platformer.wav" type="AudioStream" id=5]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -25,7 +27,7 @@ _sections_unfolded = [ "Animation", "Transform" ]
 visible = false
 build_mode = 0
 polygon = PoolVector2Array( -43.9863, -6.83936, -39.9654, -28.6924, -36.1192, -32.5385, -30.5249, -39.5315, -25.6298, -46.8741, -6.57394, -51.7692, 6.36305, -51.944, 24.0203, -47.5734, 29.7895, -39.007, 36.0832, -31.4896, 41.3279, -15.5806, 40.8034, 2.9508, 34.6846, 18.5102, 25.4189, 34.2443, 15.4539, 50.1533, 0.419037, 53.6498, -11.8187, 50.8526, -20.9095, 43.3352, -28.7766, 28.65, -35.4199, 16.7619, -42.5877, 1.02773 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 
@@ -55,7 +57,6 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
 
 [node name="hitbox" type="Area2D" parent="." index="3"]
 
-visible = false
 position = Vector2( 7.03408, 17.8154 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -78,7 +79,6 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="mouth" type="Area2D" parent="hitbox" index="1"]
 
-visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -92,8 +92,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="hitbox/mouth" index="0"]
 
-visible = false
-position = Vector2( -5.95283, 25.45 )
+position = Vector2( -6.95283, 19.45 )
 scale = Vector2( 0.709342, 0.390438 )
 build_mode = 0
 polygon = PoolVector2Array( -27.9441, -46.5066, -42.7541, -27.6184, -36.022, 2.25927, -28.9812, 21.7513, -21.9404, 38.1978, -12.0608, 55.0173, 1.24672, 55.8758, 17.5592, 53.0855, 29.0218, 21.1422, 34.051, 4.69576, 42.028, -23.7549, 27.8618, -48.4383, 5.53947, -54.8775, -16.139, -51.8725 )
@@ -110,5 +109,25 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="music" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 

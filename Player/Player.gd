@@ -11,6 +11,7 @@ var knockdir = Vector2(0,0)
 const TYPE = "PLAYER"
 var SPEED = 200
 var combo = 0
+var maxCombo = 0
 var comboTimer = 100
 
 func _physics_process(delta):
@@ -41,6 +42,7 @@ func _physics_process(delta):
 			combo = 0
 			$Sprite.frame = 3
 			holdtime = 10
+			$hurt.play()
 		
 	# movement follows cursor unless enemy is larger, then knockback
 	if (mousePos-position).length() > 5 and hitstun == 0 and holdtime == 0:
@@ -73,7 +75,9 @@ func _physics_process(delta):
 		if (body.size.x < size.x and area.name  == "hitbox") || body.get("TYPE") == "PICKUP":
 				if combo % 4 == 0 and combo != 0:
 					size += Vector2(0.5,0.5)
+					health += 1
 				combo += 1
+				maxCombo += 1
 				comboTimer = 100
 				$eat.play()
 				body.queue_free()
@@ -90,7 +94,8 @@ func _physics_process(delta):
 	
 	# death
 	if health == 0:
-		queue_free()
+		menumusic.play()
+		get_tree().change_scene("res://Levels/Level Select.tscn")
 	
 #  boost does NOT end when mouse is moved while button is HELD
 func _input(event):

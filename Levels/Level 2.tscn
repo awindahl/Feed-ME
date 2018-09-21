@@ -1,0 +1,565 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Levels/Level 2.gd" type="Script" id=1]
+[ext_resource path="res://Engine/ui.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Untitled.png" type="Texture" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Pickups/Growrito.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Rock5.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Rock4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Rock3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Rock2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/Rock1.tscn" type="PackedScene" id=11]
+
+[node name="Level 2" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="ui" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Backgrounds" type="Node2D" parent="." index="1"]
+
+[node name="Untitled" type="Sprite" parent="Backgrounds" index="0"]
+
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled5" type="Sprite" parent="Backgrounds" index="1"]
+
+position = Vector2( -6.021, 1330.66 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled6" type="Sprite" parent="Backgrounds" index="2"]
+
+position = Vector2( 2026.96, 1639.24 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled7" type="Sprite" parent="Backgrounds" index="3"]
+
+position = Vector2( 2036.04, 3436.25 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled8" type="Sprite" parent="Backgrounds" index="4"]
+
+position = Vector2( -33.2495, 3145.82 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled9" type="Sprite" parent="Backgrounds" index="5"]
+
+position = Vector2( 4205.16, 3481.63 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled10" type="Sprite" parent="Backgrounds" index="6"]
+
+position = Vector2( 4177.93, 1784.45 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled11" type="Sprite" parent="Backgrounds" index="7"]
+
+position = Vector2( 4196.08, -21.6375 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled12" type="Sprite" parent="Backgrounds" index="8"]
+
+position = Vector2( 4205.16, -1709.74 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled2" type="Sprite" parent="Backgrounds" index="9"]
+
+position = Vector2( 2000, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled3" type="Sprite" parent="Backgrounds" index="10"]
+
+position = Vector2( 2000, -1500 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Untitled4" type="Sprite" parent="Backgrounds" index="11"]
+
+position = Vector2( 0.276855, -1570.64 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 643.116, 371.49 )
+
+[node name="Enemies" type="Node2D" parent="." index="3"]
+
+[node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 3452.31, 310.067 )
+size = Vector2( 4, 4 )
+
+[node name="Enemy7" parent="Enemies" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 3647.94, 956.717 )
+size = Vector2( 4, 4 )
+
+[node name="Enemy4" parent="Enemies" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 2352.82, 2509.46 )
+size = Vector2( 6, 6 )
+
+[node name="Enemy2" parent="Enemies" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 2370.71, 1302.79 )
+size = Vector2( 2, 2 )
+
+[node name="Enemy3" parent="Enemies" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 860.054, -99.1888 )
+size = Vector2( 2, 2 )
+
+[node name="Enemy5" parent="Enemies" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 1316.51, -702.366 )
+size = Vector2( 2, 2 )
+
+[node name="Enemy6" parent="Enemies" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 887.224, -1044.71 )
+size = Vector2( 2, 2 )
+
+[node name="Enemy8" parent="Enemies" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( -243.054, -555.647 )
+size = Vector2( 2, 2 )
+
+[node name="Enemy9" parent="Enemies" index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 1849.05, -197.001 )
+size = Vector2( 2, 2 )
+
+[node name="Pickups" type="Node2D" parent="." index="4"]
+
+[node name="Growrito" parent="Pickups" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 948.405, 612.573 )
+
+[node name="Growrito9" parent="Pickups" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 836.649, 522.446 )
+
+[node name="Growrito15" parent="Pickups" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 265.689, 296.718 )
+
+[node name="Growrito16" parent="Pickups" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( -61.8392, 155.084 )
+
+[node name="Growrito17" parent="Pickups" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( -203.473, -199 )
+
+[node name="Growrito18" parent="Pickups" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( -118.319, -530.806 )
+
+[node name="Growrito19" parent="Pickups" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 13.8157, -815.63 )
+
+[node name="Growrito20" parent="Pickups" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 348.558, -824.439 )
+
+[node name="Growrito21" parent="Pickups" index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 768.453, -809.757 )
+
+[node name="Growrito22" parent="Pickups" index="9" instance=ExtResource( 6 )]
+
+position = Vector2( 454.266, -1223.78 )
+
+[node name="Growrito23" parent="Pickups" index="10" instance=ExtResource( 6 )]
+
+position = Vector2( 1126.69, -891.975 )
+
+[node name="Growrito24" parent="Pickups" index="11" instance=ExtResource( 6 )]
+
+position = Vector2( 1581.82, -278.281 )
+
+[node name="Growrito45" parent="Pickups" index="12" instance=ExtResource( 6 )]
+
+position = Vector2( 922.094, -422.483 )
+
+[node name="Growrito27" parent="Pickups" index="13" instance=ExtResource( 6 )]
+
+position = Vector2( 1227.73, 965.439 )
+
+[node name="Growrito28" parent="Pickups" index="14" instance=ExtResource( 6 )]
+
+position = Vector2( 1528.7, 1169.04 )
+
+[node name="Growrito29" parent="Pickups" index="15" instance=ExtResource( 6 )]
+
+position = Vector2( 1785.42, 1474.44 )
+
+[node name="Growrito30" parent="Pickups" index="16" instance=ExtResource( 6 )]
+
+position = Vector2( 1665.91, 1846.22 )
+
+[node name="Growrito31" parent="Pickups" index="17" instance=ExtResource( 6 )]
+
+position = Vector2( 1369.37, 1868.35 )
+
+[node name="Growrito32" parent="Pickups" index="18" instance=ExtResource( 6 )]
+
+position = Vector2( 1112.66, 1620.5 )
+
+[node name="Growrito33" parent="Pickups" index="19" instance=ExtResource( 6 )]
+
+position = Vector2( 391.21, 1434.6 )
+
+[node name="Growrito34" parent="Pickups" index="20" instance=ExtResource( 6 )]
+
+position = Vector2( 103.516, 1124.78 )
+
+[node name="Growrito35" parent="Pickups" index="21" instance=ExtResource( 6 )]
+
+position = Vector2( -246.142, 682.172 )
+
+[node name="Growrito36" parent="Pickups" index="22" instance=ExtResource( 6 )]
+
+position = Vector2( -95.656, 969.865 )
+
+[node name="Growrito25" parent="Pickups" index="23" instance=ExtResource( 6 )]
+
+position = Vector2( 1898.94, -883.166 )
+
+[node name="Growrito26" parent="Pickups" index="24" instance=ExtResource( 6 )]
+
+position = Vector2( 1567.14, -615.959 )
+
+[node name="Growrito10" parent="Pickups" index="25" instance=ExtResource( 6 )]
+
+position = Vector2( 1060.16, 616.177 )
+
+[node name="Growrito11" parent="Pickups" index="26" instance=ExtResource( 6 )]
+
+position = Vector2( 1337.75, 598.152 )
+
+[node name="Growrito12" parent="Pickups" index="27" instance=ExtResource( 6 )]
+
+position = Vector2( 1636.97, 601.757 )
+
+[node name="Growrito13" parent="Pickups" index="28" instance=ExtResource( 6 )]
+
+position = Vector2( 1781.17, 605.362 )
+
+[node name="Growrito14" parent="Pickups" index="29" instance=ExtResource( 6 )]
+
+position = Vector2( 2076.78, 717.119 )
+
+[node name="Growrito2" parent="Pickups" index="30" instance=ExtResource( 6 )]
+
+position = Vector2( 1187.41, 608.146 )
+
+[node name="Growrito3" parent="Pickups" index="31" instance=ExtResource( 6 )]
+
+position = Vector2( 1467.32, 604.455 )
+
+[node name="Growrito4" parent="Pickups" index="32" instance=ExtResource( 6 )]
+
+position = Vector2( 1941.87, 636.451 )
+
+[node name="Growrito5" parent="Pickups" index="33" instance=ExtResource( 6 )]
+
+position = Vector2( 2196.61, 747.354 )
+
+[node name="Growrito37" parent="Pickups" index="34" instance=ExtResource( 6 )]
+
+position = Vector2( 2397.68, 1056.32 )
+
+[node name="Growrito38" parent="Pickups" index="35" instance=ExtResource( 6 )]
+
+position = Vector2( 2450.3, 1556.18 )
+
+[node name="Growrito39" parent="Pickups" index="36" instance=ExtResource( 6 )]
+
+position = Vector2( 2598.58, 1905.36 )
+
+[node name="Growrito40" parent="Pickups" index="37" instance=ExtResource( 6 )]
+
+position = Vector2( 2828.18, 2120.61 )
+
+[node name="Growrito46" parent="Pickups" index="38" instance=ExtResource( 6 )]
+
+position = Vector2( 3099.88, 1696.75 )
+
+[node name="Growrito47" parent="Pickups" index="39" instance=ExtResource( 6 )]
+
+position = Vector2( 3203.13, 1359.84 )
+
+[node name="Growrito48" parent="Pickups" index="40" instance=ExtResource( 6 )]
+
+position = Vector2( 3252.03, 990.33 )
+
+[node name="Growrito49" parent="Pickups" index="41" instance=ExtResource( 6 )]
+
+position = Vector2( 3089.01, 686.025 )
+
+[node name="Growrito41" parent="Pickups" index="42" instance=ExtResource( 6 )]
+
+position = Vector2( 1970.18, 2026.88 )
+
+[node name="Growrito42" parent="Pickups" index="43" instance=ExtResource( 6 )]
+
+position = Vector2( 2117.99, 2358.54 )
+
+[node name="Growrito43" parent="Pickups" index="44" instance=ExtResource( 6 )]
+
+position = Vector2( 2045.88, 1421.23 )
+
+[node name="Growrito44" parent="Pickups" index="45" instance=ExtResource( 6 )]
+
+position = Vector2( 769.698, 1662.77 )
+
+[node name="Growrito6" parent="Pickups" index="46" instance=ExtResource( 6 )]
+
+position = Vector2( 2374.58, 677.131 )
+
+[node name="Growrito7" parent="Pickups" index="47" instance=ExtResource( 6 )]
+
+position = Vector2( 2488.53, 592.33 )
+
+[node name="Growrito8" parent="Pickups" index="48" instance=ExtResource( 6 )]
+
+position = Vector2( 2944.34, 446.578 )
+
+[node name="Growrito50" parent="Pickups" index="49" instance=ExtResource( 6 )]
+
+position = Vector2( 2759.58, 93.3659 )
+
+[node name="Growrito51" parent="Pickups" index="50" instance=ExtResource( 6 )]
+
+position = Vector2( 2618.3, -216.374 )
+
+[node name="Growrito54" parent="Pickups" index="51" instance=ExtResource( 6 )]
+
+position = Vector2( 3025.85, -200.072 )
+
+[node name="Growrito55" parent="Pickups" index="52" instance=ExtResource( 6 )]
+
+position = Vector2( 3313.85, -466.339 )
+
+[node name="Growrito52" parent="Pickups" index="53" instance=ExtResource( 6 )]
+
+position = Vector2( 2406.37, -618.492 )
+
+[node name="Growrito53" parent="Pickups" index="54" instance=ExtResource( 6 )]
+
+position = Vector2( 3139.96, -841.287 )
+
+[node name="Walls" type="Node2D" parent="." index="5"]
+
+[node name="Rock5" parent="Walls" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( 766.543, 1112.35 )
+rotation = 1.83228
+size = Vector2( 5, 5 )
+
+[node name="Rock29" parent="Walls" index="1" instance=ExtResource( 7 )]
+
+position = Vector2( 2847.78, -702.618 )
+rotation = 1.83228
+size = Vector2( 5, 5 )
+
+[node name="Rock30" parent="Walls" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 2999.93, -1273.19 )
+rotation = 1.83228
+size = Vector2( 5, 5 )
+
+[node name="Rock6" parent="Walls" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( -1027.75, 1939.81 )
+rotation = 1.78465
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock8" parent="Walls" index="4" instance=ExtResource( 7 )]
+
+position = Vector2( 2807.29, 3773.96 )
+rotation = 0.653432
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock9" parent="Walls" index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 412.287, 4588.54 )
+rotation = 1.13607
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock10" parent="Walls" index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 6536.23, 632.227 )
+rotation = 1.94137
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock11" parent="Walls" index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 4383.76, -2566.17 )
+rotation = 0.405843
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock12" parent="Walls" index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 5717.69, 3936.73 )
+rotation = 0.405843
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock13" parent="Walls" index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 7855, 2648.28 )
+rotation = 0.0908453
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock14" parent="Walls" index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 7369.94, -974.551 )
+rotation = 0.0908453
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock15" parent="Walls" index="11" instance=ExtResource( 7 )]
+
+position = Vector2( -3759.71, -95.3706 )
+rotation = 0.0908453
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock16" parent="Walls" index="12" instance=ExtResource( 7 )]
+
+position = Vector2( -3577.81, 3694.2 )
+rotation = 0.0908453
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock7" parent="Walls" index="13" instance=ExtResource( 7 )]
+
+position = Vector2( -891.325, -2196.13 )
+rotation = 3.51316
+scale = Vector2( 8.97778, 8.97778 )
+size = Vector2( 100, 100 )
+
+[node name="Rock4" parent="Walls" index="14" instance=ExtResource( 8 )]
+
+position = Vector2( 1781.71, 896.563 )
+rotation = 1.83228
+size = Vector2( 5, 5 )
+
+[node name="Rock21" parent="Walls" index="15" instance=ExtResource( 8 )]
+
+position = Vector2( 2733.32, 861.154 )
+rotation = -0.531496
+size = Vector2( 5, 5 )
+
+[node name="Rock22" parent="Walls" index="16" instance=ExtResource( 8 )]
+
+position = Vector2( 2565.13, 250.359 )
+rotation = 1.83228
+size = Vector2( 5, 5 )
+
+[node name="Rock3" parent="Walls" index="17" instance=ExtResource( 9 )]
+
+position = Vector2( 1448.23, 1470.36 )
+rotation = 1.83228
+size = Vector2( 2, 2 )
+
+[node name="Rock18" parent="Walls" index="18" instance=ExtResource( 9 )]
+
+position = Vector2( 1085.29, -114.171 )
+rotation = 1.83228
+size = Vector2( 2, 2 )
+
+[node name="Rock19" parent="Walls" index="19" instance=ExtResource( 9 )]
+
+position = Vector2( 2687.52, 616.127 )
+rotation = 1.83228
+size = Vector2( 2, 2 )
+
+[node name="Rock20" parent="Walls" index="20" instance=ExtResource( 9 )]
+
+position = Vector2( 2780.47, 1178.24 )
+rotation = 1.83228
+size = Vector2( 2, 2 )
+
+[node name="Rock24" parent="Walls" index="21" instance=ExtResource( 9 )]
+
+position = Vector2( 2777.22, 1656.51 )
+rotation = 1.83228
+size = Vector2( 2, 2 )
+
+[node name="Rock28" parent="Walls" index="22" instance=ExtResource( 9 )]
+
+position = Vector2( 3298.88, 1852.13 )
+rotation = 1.83228
+size = Vector2( 2, 2 )
+
+[node name="Rock25" parent="Walls" index="23" instance=ExtResource( 9 )]
+
+position = Vector2( 2256.65, 1913.54 )
+rotation = 1.83228
+size = Vector2( 2, 2 )
+
+[node name="Rock26" parent="Walls" index="24" instance=ExtResource( 9 )]
+
+position = Vector2( 1631.96, 2212.87 )
+rotation = 1.83228
+size = Vector2( 2, 2 )
+
+[node name="Rock2" parent="Walls" index="25" instance=ExtResource( 10 )]
+
+position = Vector2( 1433.52, 141.314 )
+rotation = -2.90587
+scale = Vector2( 1, 1 )
+size = Vector2( 5, 5 )
+
+[node name="Rock23" parent="Walls" index="26" instance=ExtResource( 10 )]
+
+position = Vector2( 2066.44, 185.574 )
+rotation = -2.90587
+scale = Vector2( 1, 1 )
+size = Vector2( 5, 5 )
+
+[node name="Rock17" parent="Walls" index="27" instance=ExtResource( 10 )]
+
+position = Vector2( 428.802, -301.291 )
+rotation = -2.90587
+scale = Vector2( 1, 1 )
+size = Vector2( 5, 5 )
+
+[node name="Rock27" parent="Walls" index="28" instance=ExtResource( 10 )]
+
+position = Vector2( 2339.48, -74.1733 )
+rotation = -1.14135
+scale = Vector2( 1, 1 )
+size = Vector2( 5, 5 )
+
+[node name="Rock1" parent="Walls" index="29" instance=ExtResource( 11 )]
+
+position = Vector2( 70.1447, 582.693 )
+rotation = -0.561293
+scale = Vector2( 1, 1 )
+size = Vector2( 3, 3 )
+
+

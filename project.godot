@@ -10,9 +10,15 @@ config_version=3
 
 [application]
 
-config/name="EvolutionGame"
-run/main_scene="res://Levels/Level 1.tscn"
+config/name="Feed Me"
+run/main_scene="res://Main Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+menumusic="*res://Engine/menumusic.tscn"
+Mainmenusc="*res://Main Menu.gd"
+run="*res://run.gd"
 
 [display]
 
